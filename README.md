@@ -13,6 +13,7 @@ output: html_document
 <!-- badges: end -->
 
 ##About:
+
 Makes Playfair graphs easier to create using ggplot.
 
 ## How to Use `ggplayfair`
