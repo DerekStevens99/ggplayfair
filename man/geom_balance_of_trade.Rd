@@ -15,6 +15,23 @@ geom_balance_of_trade(
   show.legend = NA
 )
 }
+\arguments{
+\item{data}{A data frame (defaults to the plot-level data)}
+
+\item{mapping}{Set of aesthetic mappings, see \code{\link[ggplot2]{geom_ribbon}}}
+
+\item{stat}{Stat to use (defaults to \code{StatBalanceOfTrade})}
+
+\item{geom}{Geom to use (defaults to \code{GeomBalanceOfTrade})}
+
+\item{position}{Position adjustment}
+
+\item{...}{Other arguments passed on to the layer (e.g. \code{na.rm})}
+
+\item{na.rm}{If \code{TRUE}, remove \code{NA}s}
+
+\item{show.legend}{Should this layer be included in the legend?}
+}
 \description{
-Fill between exports and imports, coloring surplus vs deficit.
+…
 }

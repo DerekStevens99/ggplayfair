@@ -3,19 +3,15 @@
 \docType{data}
 \name{StatBalanceOfTrade}
 \alias{StatBalanceOfTrade}
-\title{StatBalanceOfTrade: split & interpolate export–import areas for ribbon plotting}
+\title{StatBalanceOfTrade: split & interpolate exports–imports for ribbon plotting}
 \format{
 An object of class \code{StatBalanceOfTrade} (inherits from \code{Stat}, \code{ggproto}, \code{gg}) of length 3.
 }
 \usage{
 StatBalanceOfTrade
 }
-\arguments{
-\item{exports}{Numeric vector of export values}
-
-\item{imports}{Numeric vector of import values}
-}
 \description{
-StatBalanceOfTrade: split & interpolate export–import areas for ribbon plotting
+(Transforms a data frame with aesthetics \code{x}, \code{exports}, and \code{imports}
+into \code{ymin}, \code{ymax}, \code{direction}, and \code{group} for a ribbon.)
 }
 \keyword{datasets}

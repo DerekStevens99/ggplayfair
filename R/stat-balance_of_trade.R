@@ -1,7 +1,13 @@
-#' StatBalanceOfTrade: split & interpolate export–import areas for ribbon plotting
+#' @importFrom ggplot2 aes after_stat layer geom_line geom_point
+#' @importFrom ggplot2 GeomRibbon
+#' @importFrom ggplot2 draw_key_polygon
+NULL
+
+
+#' StatBalanceOfTrade: split & interpolate exports–imports for ribbon plotting
 #'
-#' @param exports Numeric vector of export values
-#' @param imports Numeric vector of import values
+#' (Transforms a data frame with aesthetics \code{x}, \code{exports}, and \code{imports}
+#'  into \code{ymin}, \code{ymax}, \code{direction}, and \code{group} for a ribbon.)
 #' @export
 StatBalanceOfTrade <- ggplot2::ggproto(
   "StatBalanceOfTrade", ggplot2::Stat,
