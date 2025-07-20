@@ -12,7 +12,7 @@ output: html_document
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ggplayfair)](https://CRAN.R-project.org/package=ggplayfair)
 <!-- badges: end -->
 
-##About:
+## About:
 
 Makes Playfair graphs easier to create using ggplot.
 
