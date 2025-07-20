@@ -1,0 +1,13 @@
+Package: ggplayfair
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Derek", "Stevens", , "derekburgandy@gmail.com", role = c("aut", "cre"))
+Description: Makes Playfair's charts more accessable to create with ggplot2.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
