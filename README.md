@@ -49,7 +49,7 @@ Load the package and prepare your data frame. Your data should include:
 - `exports`: numeric values representing deficit lessening activity.
 - `imports`: numeric values representing deficit driving activity.
 
-```{r}
+```r
 library(ggplot2)
 library(ggplayfair)
 
@@ -72,28 +72,6 @@ ggplot(df, aes(x = year, exports = exports, imports = imports)) +
   ) +
   theme_minimal()
 ```
-
----
-
-### Geom and Stat Details
-
-#### `geom_balance_of_trade()`
-
-A convenient wrapper that is used for making balance of trade charts.
-Includes a ribbon layer used for the fill, two point, and two line layers used
-to visualize the data. Point and line layers do not display computed intersections used for the fill.
-
-- **Arguments**:
-  - `mapping`: aesthetic mapping (must include `x`, `exports`, and `imports`).
-
-#### `stat_balance_of_trade()`
-
-Compute the transformed values for you. Specifically this handles edge cases such as creation of intersecting points to handle ribbons more smoothly.
-
-```{r}
-ggplayfair::StatBalanceOfTrade()
-```
-
 
 ---
 
