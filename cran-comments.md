@@ -1,6 +1,15 @@
 # CRAN submission comments for ggplayfair 0.1.0
 
-## New in version 0.1.0
+## New in Version 0.1.1
+
+- **bug fix with exports and imports globally not recognized**:
+  * Fixes bug with improper naming scope
+
+- **More extensive README**
+  * Adds how to use sections and commentary
+
+
+## Version 0.1.0
 
 - **`geom_balance_of_trade()`**:  
   A single-call ggplot2 layer that  
