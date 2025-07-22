@@ -1,5 +1,5 @@
 Package: ggplayfair
-Title: Geoms for Playfair-Style charts
+Title: Geoms for Playfair-Style Charts
 Version: 0.1.1
 Authors@R: 
     person(
@@ -9,7 +9,7 @@ Authors@R:
       role = c("aut", "cre")
     )
 Description:  
-  Currently provides geom_balance_of_trade(), a ggplot2 layer that fills the area  
+  Currently provides geom_balance_of_trade(), a `ggplot2` layer that fills the area  
   between exports and imports series (with automatic crossing detection  
   and conditional coloring for surplus vs. deficit), and overlays lines  
   and points by default.
@@ -17,12 +17,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    ggplot2 (>= 3.4.0)
+    `ggplot2` (>= 3.4.0)
 Suggests:
-    testthat (>= 3.0.0),
-    roxygen2 (>= 7.1.0),
-    knitr,
-    rmarkdown
+    `testthat` (>= 3.0.0),
+    `roxygen2` (>= 7.1.0),
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 URL: https://github.com/DerekStevens99/ggplayfair
