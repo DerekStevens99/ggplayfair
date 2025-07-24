@@ -3,15 +3,28 @@
 \docType{data}
 \name{StatBalanceOfTrade}
 \alias{StatBalanceOfTrade}
-\title{StatBalanceOfTrade: split & interpolate exports–imports for ribbon plotting}
+\title{StatBalanceOfTrade}
 \format{
-An object of class \code{StatBalanceOfTrade} (inherits from \code{Stat}, \code{ggproto}, \code{gg}) of length 3.
+An object of class \code{StatBalanceOfTrade} (inherits from \code{Stat}, \code{ggproto}, \code{gg}) of length 4.
 }
 \usage{
 StatBalanceOfTrade
 }
+\value{
+A \code{data.frame} with columns: \code{x}, \code{ymin}, \code{ymax}, \code{direction}, and \code{group}.
+These are passed to a \code{GeomRibbon} layer to visualize the balance of trade.
+}
 \description{
-(Transforms a data frame with aesthetics \code{x}, \code{exports}, and \code{imports}
-into \code{ymin}, \code{ymax}, \code{direction}, and \code{group} for a ribbon.)
+Splits a time series of exports and imports into segments of trade surplus or deficit,
+inserting interpolated intersection points where they cross. This allows ribbons to be
+shaded differently for surplus vs deficit in a balance of trade plot.
+}
+\details{
+A \code{ggplot2::Stat} that computes ribbon boundaries for trade balance visualization.
+It takes export and import values and generates ymin/ymax pairs for plotting
+shaded ribbons showing surplus or deficit. Used internally by \code{geom_balance_of_trade()}.
+}
+\seealso{
+\code{\link[=geom_balance_of_trade]{geom_balance_of_trade()}}
 }
 \keyword{datasets}

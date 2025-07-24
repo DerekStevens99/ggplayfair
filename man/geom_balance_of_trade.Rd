@@ -32,6 +32,15 @@ geom_balance_of_trade(
 
 \item{show.legend}{Should this layer be included in the legend?}
 }
+\value{
+A ggplot2 layer representing the balance of trade. Within the layer with be a colored ribbon and two lines and point sets representing your imports and exports
+}
 \description{
-…
+\code{geom_balance_of_trade()} creates a custom ggplot2 ribbon that visualizes the balance of trade by shading the area between exports and imports.
+}
+\note{
+If you map \code{exports}/\code{imports} in the global \code{aes()}, you'll see:
+\"The following aesthetics were dropped…exports and imports.\"
+This simply means the stat used them to compute the ribbon and then removed
+them—your plot still renders correctly.
 }

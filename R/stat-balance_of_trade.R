@@ -4,15 +4,24 @@
 NULL
 
 
-#' StatBalanceOfTrade: split & interpolate exports–imports for ribbon plotting
+#' StatBalanceOfTrade
 #'
-#' (Transforms a data frame with aesthetics \code{x}, \code{exports}, and \code{imports}
-#'  into \code{ymin}, \code{ymax}, \code{direction}, and \code{group} for a ribbon.)
+#' A `ggplot2::Stat` that computes ribbon boundaries for trade balance visualization. 
+#' It takes export and import values and generates ymin/ymax pairs for plotting 
+#' shaded ribbons showing surplus or deficit. Used internally by `geom_balance_of_trade()`.
+#'
+#' @description
+#' Splits a time series of exports and imports into segments of trade surplus or deficit, 
+#' inserting interpolated intersection points where they cross. This allows ribbons to be 
+#' shaded differently for surplus vs deficit in a balance of trade plot.
+#' @return A `data.frame` with columns: \code{x}, \code{ymin}, \code{ymax}, \code{direction}, and \code{group}. 
+#' These are passed to a `GeomRibbon` layer to visualize the balance of trade.
+#' @seealso [geom_balance_of_trade()]
 #' @export
 StatBalanceOfTrade <- ggplot2::ggproto(
   "StatBalanceOfTrade", ggplot2::Stat,
   required_aes = c("x", "exports", "imports"),
-  
+  default_aes = ggplot2::aes(),
   compute_group = function(data, scales) {
     data <- data[order(data$x), , drop = FALSE]
     net  <- data$exports - data$imports

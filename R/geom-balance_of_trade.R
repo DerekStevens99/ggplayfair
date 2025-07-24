@@ -23,8 +23,14 @@ GeomBalanceOfTrade <- ggplot2::ggproto(
 
 
 #' @title geom_balance_of_trade
-#' @description …  
+#' @description `geom_balance_of_trade()` creates a custom ggplot2 ribbon that visualizes the balance of trade by shading the area between exports and imports. 
 #' @param mapping     Set of aesthetic mappings, see \code{\link[ggplot2]{geom_ribbon}}  
+#' @note
+#' If you map `exports`/`imports` in the global `aes()`, you'll see:
+#'   \"The following aesthetics were dropped…exports and imports.\"
+#' This simply means the stat used them to compute the ribbon and then removed
+#' them—your plot still renders correctly. To suppress this warning, simply move
+#' the aes to the geom_balance_of_trade() call.
 #' @param data        A data frame (defaults to the plot-level data)  
 #' @param stat        Stat to use (defaults to \code{StatBalanceOfTrade})  
 #' @param geom        Geom to use (defaults to \code{GeomBalanceOfTrade})  
@@ -32,7 +38,7 @@ GeomBalanceOfTrade <- ggplot2::ggproto(
 #' @param ...         Other arguments passed on to the layer (e.g. \code{na.rm})  
 #' @param na.rm       If \code{TRUE}, remove \code{NA}s  
 #' @param show.legend Should this layer be included in the legend?  
-#' @export
+#' @return A ggplot2 layer representing the balance of trade. Within the layer with be a colored ribbon and two lines and point sets representing your imports and exports
 #' @export
 geom_balance_of_trade <- function(data = NULL, mapping = NULL,
                                   stat        = StatBalanceOfTrade,
@@ -57,7 +63,8 @@ geom_balance_of_trade <- function(data = NULL, mapping = NULL,
     geom        = geom,
     position    = position,
     show.legend = show.legend,
-    inherit.aes = TRUE,   
+    #prevents warning from dropping exports/imports
+    inherit.aes = T,   
     params      = list(na.rm = na.rm, ...)
   )
   
